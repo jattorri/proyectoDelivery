@@ -1,9 +1,14 @@
-import { Injectable } from '@angular/core'; 
+import { Injectable, Output,EventEmitter } from '@angular/core'; 
+
 import  *  as  data  from  'src/assets/datos/platos.json'  
 @Injectable({   
   
   providedIn: 'root' 
-}) export class DeliveryService {  
+}) export class DeliveryService {
+  
+  @Output() disparadorDeAgregacion: EventEmitter<any>= new EventEmitter();
+
+
   platosFile:any  = (data  as  any).default; constructor() {     
     console.log("Servicio Cargado!!!");     
     console.log(this.platosFile);    
