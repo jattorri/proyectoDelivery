@@ -1,21 +1,52 @@
 import { Component, OnInit } from '@angular/core'; 
 import { DeliveryService } from 'src/app/servicios/delivery.service'; 
-import { Router } from '@angular/router';  
+import { ActivatedRoute, Router } from '@angular/router';  
+import { Plato } from '../entities/Plato';
 
 @Component({   
   selector: 'app-platos',   
   templateUrl: './platos.component.html',   
   styleUrls: ['./platos.component.css'] }) 
+
   export class PlatosComponent implements OnInit {  
 
-  platosArr:any[] = [];  
+    preciototal:number;
+    plato: Plato;
+    cantidad:number=0; 
+    precioplato: number=0;
 
-  constructor(private servicioDelivery:DeliveryService, private router:Router) {         }
+    platosArr:any[] = [];  
+
+  constructor(private servicioDelivery:DeliveryService, 
+    private router:Router,
+    private activatedRoute:ActivatedRoute) {}
     
   ngOnInit(): void {     
     this.platosArr = this.servicioDelivery.getPlatos();     
-    console.log(this.platosArr);   }  
+    console.log(this.platosArr);}  
+
   public verPlato(idx:string){ 
     this.router.navigate(['/detallePlato', idx])   
   }
+
+  agregar(idx:string)  {
+
+
+   
+      console.log("Numeroque recivimos del id... " + idx)       
+      this.plato = this.servicioDelivery.getPlatoXId(idx)
+      this.precioplato= +this.plato?.precio;
+
+      console.log("Informacion Plato ID "+ this.plato?.id)
+      console.log("Nombre: "+this.plato?.nombre)
+      console.log("Precio: "+this.plato?.precio)
+
+
+    this.cantidad+=1;
+    this.preciototal=this.cantidad*this.precioplato;
+    console.log("Cantidad Agregados: " + this.cantidad);
+    console.log( "Sumatoria total: "+ this.preciototal);
+    this.servicioDelivery.disparadorDeAgregacion.emit({dataPlato:this.plato})              
+  }
+
   }

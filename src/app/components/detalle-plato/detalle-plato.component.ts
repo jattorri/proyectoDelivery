@@ -7,29 +7,31 @@ import { Plato } from '../entities/Plato';
 @Component({   
   selector: 'app-detalle-plato',   
   templateUrl: './detalle-plato.component.html',   
-  styleUrls: ['./detalle-plato.component.css'] }) 
+  styleUrls: ['./detalle-plato.component.css'] 
+}) 
   
   
   export class DetallePlatoComponent implements OnInit {  
 
-  preciototal:any;
+  preciototal:number;
 
-  @Input() plato: Plato;
+  plato: Plato;
   cantidad:number=0; 
   precioplato: number=0;
   
   constructor(private activatedRoute:ActivatedRoute, private servicioDelibery:DeliveryService) {  
       }  
-      ngOnInit(): void { 
 
-          this.activatedRoute.params.subscribe(params =>{
-          console.log("Numeroque recivimos dl URL:" + params['id'])       
-          this.plato = this.servicioDelibery.getPlatoXId(params['id'])})
-          this.precioplato= +this.plato?.precio;
+    ngOnInit(): void { 
 
-          console.log("Informacion Plato ID "+ this.plato?.id)
-          console.log("Nombre: "+this.plato?.nombre)
-          console.log("Precio: "+this.plato?.precio)
+        this.activatedRoute.params.subscribe(params =>{
+        console.log("Numeroque recivimos dl URL:" + params['id'])       
+        this.plato = this.servicioDelibery.getPlatoXId(params['id'])})
+        this.precioplato= +this.plato?.precio;
+
+        console.log("Informacion Plato ID "+ this.plato?.id)
+        console.log("Nombre: "+this.plato?.nombre)
+        console.log("Precio: "+this.plato?.precio)
       } 
     
     agregar()  {
@@ -38,4 +40,6 @@ import { Plato } from '../entities/Plato';
       console.log("Cantidad Agregados: " + this.cantidad);
       console.log( "Sumatoria total: "+ this.preciototal);
       this.servicioDelibery.disparadorDeAgregacion.emit({dataPlato:this.plato})              
-    }} 
+    }
+  
+  } 

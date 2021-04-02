@@ -6,7 +6,7 @@
         <img src="assets/img/{{plato?.imagenPath}}" style="max-width: 300px;" class="img-fluid" [alt]="plato?.nombre">         
         <br><br>         
         <a [routerLink]="['/platos']" class="btn btn-outline-danger btnblock">Regresar</a>
-        <a class="btn" (click)="agregar()">Agregar</a>     
+        <a class="btn btn-light" (click)="agregar()">Agregar</a>     
     </div>       <div class="col-md-8">         
         <h3 style="color: crimson">{{plato?.nombre}}</h3>         
         <hr>         
@@ -16,10 +16,10 @@
         <p><b>Ingredientes:</b>
             <li *ngFor="let ingredienteAux of plato?.ingredientes; let i = index">{{ingredienteAux}}</li> </p>         
             <div>             
-                <span *ngIf="plato?.rubro == 'Bebidas'" style="color:red; font-weight: bold;">                
+               <!--- <span *ngIf= "plato?.rubro == 'Bebidas'" style="color:red; font-weight: bold;">                
                     Es Bebida             
-                </span>         
+                </span>     -->    
             </div>     
         </div>  
     </div>   
-    <app-tu-pedido></app-tu-pedido>
+    

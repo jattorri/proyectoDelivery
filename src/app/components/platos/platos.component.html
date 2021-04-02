@@ -8,7 +8,10 @@
             <p class="card-text">$ {{platoAux.precio}}</p>       
         </div>       
         <div class="card-footer" style="text-align: center;">         
-           <button (click) = "verPlato(platoAux.id)"  class="btn btn-primary" style="width: 90%;" >Detalle</button>   
+           <button (click) = "verPlato(platoAux.id)"  class="btn btn-primary" style="width: 90%;" >Detalle</button>  
+           <button class="btn btn-light" (click)="agregar(platoAux.id)">Agregar</button> 
         </div>            
     </div>   
-</div>  
+</div>
+
+<app-tu-pedido></app-tu-pedido>
