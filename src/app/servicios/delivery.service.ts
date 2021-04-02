@@ -9,7 +9,9 @@ import  *  as  data  from  'src/assets/datos/platos.json'
   @Output() disparadorDeAgregacion: EventEmitter<any>= new EventEmitter();
 
 
-  platosFile:any  = (data  as  any).default; constructor() {     
+  platosFile:any  = (data  as  any).default; 
+  
+  constructor() {     
     console.log("Servicio Cargado!!!");     
     console.log(this.platosFile);    
   }       

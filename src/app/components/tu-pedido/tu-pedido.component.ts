@@ -2,30 +2,32 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DeliveryService } from 'src/app/servicios/delivery.service';
 import { ActivatedRoute } from '@angular/router';
+import { Plato } from '../entities/Plato';
+import { PlatosComponent } from '../platos/platos.component';
+
 @Component({
- 
   selector: 'app-tu-pedido',
   templateUrl: './tu-pedido.component.html',
   styleUrls: ['./tu-pedido.component.css']
 })
+
 export class TuPedidoComponent implements OnInit {
 
-  constructor(private activatedRoute:ActivatedRoute,private servicioDelivery:DeliveryService, private router:Router ) { }
-  plato?: any [];
+  constructor(private activatedRoute:ActivatedRoute,
+    private servicioDelivery:DeliveryService,
+    private router:Router ) { }
+
+  arrPlato: Array<any>= [];
   ngOnInit(): void {
-      console.log("Andá")
-      this.servicioDelivery.disparadorDeAgregacion.subscribe(plato => {
-        this.plato=plato
+      this.servicioDelivery.disparadorDeAgregacion.subscribe(plato  => {
+     
+       this.arrPlato.push(plato);
         console.log('Recibiendo this.plato...',plato)   
-        for(var i in this.plato)
-          { 
-          console.log(this.plato[i]);  
-          }      
-        //this.plato?.push(this.plato)
-        //console.log(this.plato?.nombre)
-        //console.log(this.plato?.precio)
-  })
-  
- 
+       
+      
+       
+       
+  }); 
 }
+
 }
