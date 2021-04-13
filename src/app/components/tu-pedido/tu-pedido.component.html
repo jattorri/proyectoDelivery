@@ -1,21 +1,29 @@
-<header>Pedido</header>
+
 <div>
    
 </div>
 <div class="divider"></div>
 <div>
     <ul class="favorite-list">
-         
-            
             <div>
-                <div class="title-inside">
-                    <p>probando el front</p>
-                     <li *ngFor="let plato of arrPlato">
-                         <p>{{plato.dataPlato.nombre}}</p>
-                     </li>
-                   
-                        
-                   
+                <div class="card" style="text-align: center "> 
+                    <div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                        <p class="card-title">Pedido:</p>
+                        </tr>
+                    </thead>
+                    <div class="card-body">
+                    <tbody>
+                        <ul  class="list-group list-group-flush" *ngFor="let plato of arrPlato" >
+                        <li class="list-group-item">{{plato.dataPlato.nombre}}</li>
+                        <li class="list-group-item">{{plato.dataPlato.precio}}</li>
+                    </ul>
+                    </tbody>
+                </div>
+                </table>
+            </div> 
                 </div>
             </div>
         

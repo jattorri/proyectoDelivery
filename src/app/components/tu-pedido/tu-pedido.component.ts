@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { DeliveryService } from 'src/app/servicios/delivery.service';
 import { ActivatedRoute } from '@angular/router';
 
+import { Plato } from '../entities/Plato';
+
 
 @Component({
   selector: 'app-tu-pedido',
@@ -13,6 +15,10 @@ import { ActivatedRoute } from '@angular/router';
 export class TuPedidoComponent implements OnInit {
   
   arrPlato: Array<any>= [];
+  platoAux : Plato;
+  precio: number;
+  precioTotal: number;
+
 
   constructor(private activatedRoute:ActivatedRoute,
     private servicioDelivery:DeliveryService,
@@ -22,8 +28,14 @@ export class TuPedidoComponent implements OnInit {
   ngOnInit(): void {
       this.servicioDelivery.disparadorDeAgregacion.subscribe(plato  => {
       this.arrPlato.push(plato);
-      console.log('Recibiendo this.plato...', plato)   
+      console.log('Recibiendo this.plato...', plato)
+      this.arrPlato.forEach(p =>{ 
+      this.platoAux.precio = p.precio
+      this.precioTotal = +this.platoAux.precio + this.precioTotal
+      })
   }); 
 }
+
+
 
 }
