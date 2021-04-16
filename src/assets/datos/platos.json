@@ -3,7 +3,7 @@
         {
             "id":"1",
             "nombre":"Pizza Especial",
-            "precio":"120",
+            "precio":120,
             "rubro":"Comidas",
             "imagenPath":"pizza-especial.jpg",
             "ingredientes":["Queso Muzzarella","Jamon Cocido","Tomate", "Morron"]
@@ -11,7 +11,7 @@
         {
             "id":"2",
             "nombre":"Empanadas Docena",
-            "precio":"120",
+            "precio":150,
             "rubro":"Comidas",
             "imagenPath":"empanadas.jpg",
             "ingredientes":["Carne Molida","Cebolla","Pimiento"]
@@ -19,7 +19,7 @@
         {
             "id":"3",
             "nombre":"Lomo Completo",
-            "precio":"120",
+            "precio":192,
             "rubro":"Comidas",
             "imagenPath":"lomo-completo.jpg",
             "ingredientes":["Pan", "Lomo","Queso","Tomate", "Lechuga", "Huevo", "Condimentos"]
@@ -27,7 +27,7 @@
         {
             "id":"4",
             "nombre":"Mini Hamburguesa",
-            "precio":"120",
+            "precio":12,
             "rubro":"Comidas",
             "imagenPath":"hamburguesa.jpg",
             "ingredientes":["Pan", "Carne Molida","Queso","Tomate", "Lechuga"]
@@ -35,7 +35,7 @@
         {
             "id":"5",
             "nombre":"Cerveza Deibeer",
-            "precio":"140",
+            "precio":140,
             "rubro":"Bebidas",
             "imagenPath":"cerveza.jpg",
             "ingredientes":["Cebada","Agua","Lupulo"]

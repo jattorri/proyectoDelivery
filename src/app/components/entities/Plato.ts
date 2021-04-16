@@ -1,7 +1,7 @@
 export class Plato{
     id: String;
     nombre: String;
-    precio: String;
+    precio: number;
     imagenPath: String;
     titulos: String;
     rubro: String;

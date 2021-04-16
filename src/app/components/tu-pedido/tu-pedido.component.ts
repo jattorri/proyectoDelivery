@@ -16,8 +16,7 @@ export class TuPedidoComponent implements OnInit {
   
   arrPlato: Array<any>= [];
   platoAux : Plato;
-  precio: number;
-  precioTotal: number;
+  precioTotal: number=0;
 
 
   constructor(private activatedRoute:ActivatedRoute,
@@ -26,16 +25,13 @@ export class TuPedidoComponent implements OnInit {
 
  
   ngOnInit(): void {
-      this.servicioDelivery.disparadorDeAgregacion.subscribe(plato  => {
+      this.servicioDelivery.disparadorDePlato.subscribe(plato  => {
       this.arrPlato.push(plato);
       console.log('Recibiendo this.plato...', plato)
-      this.arrPlato.forEach(p =>{ 
-      this.platoAux.precio = p.precio
-      this.precioTotal = +this.platoAux.precio + this.precioTotal
-      })
+      this.precioTotal += plato.dataPlato.precio
+      console.log('Prescio Total', this.precioTotal)
   }); 
 }
-
 
 
 }

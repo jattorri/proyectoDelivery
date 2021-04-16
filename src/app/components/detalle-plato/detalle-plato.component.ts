@@ -39,7 +39,7 @@ import { Plato } from '../entities/Plato';
       this.preciototal=this.cantidad*this.precioplato;
       console.log("Cantidad Agregados: " + this.cantidad);
       console.log( "Sumatoria total: "+ this.preciototal);
-      this.servicioDelibery.disparadorDeAgregacion.emit({dataPlato:this.plato})              
+      this.servicioDelibery.disparadorDePlato.emit({dataPlato:this.plato})              
     }
   
   } 
