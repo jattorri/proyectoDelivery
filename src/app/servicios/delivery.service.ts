@@ -1,14 +1,13 @@
 import { Injectable, Output, EventEmitter } from '@angular/core';
 
 import *  as  data from 'src/assets/datos/platos.json'
-@Injectable({
 
+@Injectable({
   providedIn: 'root'
 }) export class DeliveryService {
 
   disparadorDePlato: EventEmitter<any> = new EventEmitter();
  // disparadorDeResultado: EventEmitter<any> = new EventEmitter();
-
 
   platosFile: any = (data as any).default;
 

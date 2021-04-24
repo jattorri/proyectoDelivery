@@ -1,19 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { DeliveryService } from 'src/app/servicios/delivery.service';
-import { ActivatedRoute } from '@angular/router';
-
 import { Plato } from '../entities/Plato';
 
-
 @Component({
-  selector: 'app-tu-pedido',
-  templateUrl: './tu-pedido.component.html',
-  styleUrls: ['./tu-pedido.component.css']
+  selector: 'app-cart',
+  templateUrl: './cart.component.html',
+  styleUrls: ['./cart.component.css']
 })
+export class CartComponent implements OnInit {
 
-export class TuPedidoComponent implements OnInit {
-  
   arrPlato: Array<any>= [];
   platoAux : Plato;
   precioTotal: number=0;
@@ -23,7 +19,7 @@ export class TuPedidoComponent implements OnInit {
 
   constructor(private activatedRoute:ActivatedRoute,
     private servicioDelivery:DeliveryService,
-    private router:Router ) { }
+    private router:Router) {}
 
  
   ngOnInit(): void {
@@ -33,9 +29,11 @@ export class TuPedidoComponent implements OnInit {
       this.precioTotal += plato.dataPlato.precio;
       this.precioPlato = plato.dataPlato.precio;
       this.nombrePlato = plato.dataPlato.nombre;
-      console.log('Prescio Total', this.precioTotal)
+      console.log('Precio Total', this.precioTotal)
   }); 
-}
+  }
 
-
+  checkout(): void{
+    this.router.navigate(['/login'])
+  }
 }

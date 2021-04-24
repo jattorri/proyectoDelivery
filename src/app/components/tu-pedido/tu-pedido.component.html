@@ -1,34 +1,33 @@
 
 <div>
-   
 </div>
 <div class="divider"></div>
 <div>
     <ul class="favorite-list">
             <div>
                 <div class="card" style="text-align: center "> 
-                    <div>
+                    
                 <table class="table">
                     <thead>
                         <tr>
                         <p class="card-title">Pedido:</p>
                         </tr>
                     </thead>
-                    <div class="card-body">
-                    <tbody>
-                        <ul  class="list-group list-group-flush" *ngFor="let plato of arrPlato" >
-                        <li class="list-group-item">{{plato.dataPlato.nombre}}</li>
-                        <li class="list-group-item">{{plato.dataPlato.precio}}</li>
+                    <div class="card-body" >
+                    <tbody style="display: block; position:relative;
+                    width:100%; overflow-y:scroll;">
+                        <ul  class="list-group list-group-flush" *ngFor="let i of arrPlato">
+                            <li class="list-group-item">{{i.dataPlato.nombre}}</li>
+                        </ul>
+                        <ul class="list-group list-group-flush">
+                        <li class="list-group-item">{{this.precioPlato}}</li>
                         <li class="list-group-item">{{this.precioTotal}}</li>
-                   
-                    </ul>
+                        </ul>
                     </tbody>
                 </div>
                 </table>
             </div> 
                 </div>
-            </div>
-        
     </ul>
 </div>
 

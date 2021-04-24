@@ -1,17 +1,22 @@
-<h1>Nuestros Platos</h1>
+<div style="background-image: url('https://i.pinimg.com/originals/62/e7/42/62e7423d5498696cd21042e6c749631d.jpg'); height: 100vh;  background-position: center;
+background-repeat: no-repeat; background-size: cover; ">
+<h1 style="text-align: center; color:aliceblue; margin-bottom: 10px;">Nuestros Platos</h1>
   
-<div class="card-deck">     
-    <div class="card" *ngFor="let platoAux of platosArr; let i = index" style="max-width: 33%; padding: 10px;">  
+<div class="card-deck"  style="opacity: 0.9;" >     
+    <div class="card" *ngFor="let platoAux of platosArr; let i = index" style="max-width: 23%; padding: 10px;">  
         <img class="card-imgtop" src="assets/img/{{platoAux.imagenPath}}" alt="Card image cap" style="max-height: 150px;">       
         <div class="card-body">         
             <h5 class="card-title">{{platoAux.nombre}}</h5>         
             <p class="card-text">$ {{platoAux.precio}}</p>       
         </div>       
         <div class="card-footer" style="text-align: center;">         
-           <button (click) = "verPlato(platoAux.id)"  class="btn btn-primary" style="width: 90%;" >Detalle</button>  
-           <button class="btn btn-primary" (click)="agregar(platoAux.id)">Agregar</button> 
-        </div>            
+           <button (click) = "verPlato(platoAux.id)" class="btn btn-primary" style="width: 90%; margin-top: 10px;">Detalle</button>  
+           <button class="btn btn-primary" style="width: 90%; margin-top: 10px;" (click)="agregar(platoAux.id)">Agregar</button> 
+        </div> 
+              
     </div>   
+    
 </div>
 
-<app-tu-pedido></app-tu-pedido>
+<app-cart ></app-cart>   
+

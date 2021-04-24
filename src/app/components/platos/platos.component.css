@@ -1,0 +1,16 @@
+app-tu-pedido.carritoo {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    opacity: 0.5;
+    transition: 1s;
+}
+
+app-tu-pedido.carritoo:hover {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    opacity: 1;
+    transition: 1s;
+
+}

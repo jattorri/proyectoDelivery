@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pedido</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=0">
+</head>
+<body>
+	<main class="page" style="background-image: url('https://i.pinimg.com/originals/62/e7/42/62e7423d5498696cd21042e6c749631d.jpg'); height: 100vh;  background-position: center;
+	background-repeat: no-repeat; background-size: cover; ">
+	 	<section class="shopping-cart dark">
+	 		<div class="container"  >
+		        <div class="content" style="opacity: 0.9;">
+	 				<div class="row">
+	 					<div class="col-md-12 col-lg-8">
+							<div class="block-heading" >
+							<h2 style="text-align:center; margin-top: 25px; margin-bottom: 25px; color:aliceblue;" >Pedido</h2>
+						    </div>
+							<div class="card"  
+							style="height: 200px;
+							overflow-y: scroll;">
+							<ul  class="list-group list-group-flush" *ngFor="let i of arrPlato">
+							    <li class="list-group-item" style="text-align: center;">{{i.dataPlato.nombre}}</li>
+						    </ul>
+						</div>
+			 			</div>
+			 			<div class="col-md-12 col-lg-4" style="text-align:center; margin-top: 25px; margin-bottom: 25px;">
+							
+			 				<div class="summary">
+								<div class="card" >
+			 					<h3 class="card-title" style="text-align: center;">Tu Compra:</h3>
+								<div class="card-text" style="text-align: center;">
+								<div class="summary-item"><span class="text" >Precio:  </span><span class="price">{{this.precioPlato}}</span></div>
+			 					<div class="summary-item"><span class="text">Total:  </span><span class="price">{{this.precioTotal}}</span></div>
+								<button type="button" class="btn btn-outline-danger btn-lg btn-block" (click)="checkout()">Checkout</button>
+							</div>
+				 			</div>
+						</div>
+			 			</div>
+		 			</div> 
+		 		</div>
+	 		</div>
+		</section>
+	</main>
+</body>
+</html>

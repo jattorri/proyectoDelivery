@@ -11,7 +11,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Injectable } from '@angular/core';
 import { DetallePlatoComponent } from './components/detalle-plato/detalle-plato.component';
 import { BuscadorComponent } from './components/buscador/buscador.component';
-import { TuPedidoComponent } from './components/tu-pedido/tu-pedido.component'; 
+import { TuPedidoComponent } from './components/tu-pedido/tu-pedido.component';
+import { CartComponent } from './components/cart/cart.component';
+import { EnviadoComponent } from './components/enviado/enviado.component';
+import { LoginComponent } from './components/login/login.component'; 
 
 @Injectable({   
   providedIn: 'root' }) 
@@ -27,7 +30,10 @@ import { TuPedidoComponent } from './components/tu-pedido/tu-pedido.component';
     PlatosComponent,
     DetallePlatoComponent,
     BuscadorComponent,
-    TuPedidoComponent
+    TuPedidoComponent,
+    CartComponent,
+    EnviadoComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

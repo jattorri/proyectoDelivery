@@ -1,0 +1,46 @@
+<form novalidate >
+  <div style="background-image: url(https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80);
+  height: 100vh;  
+  background-position: center;
+  background-repeat: no-repeat; 
+  background-size: cover;">
+
+    <div class="container" style=" position:absolute; top:20%; left:8%; ">
+    <div class="form-group" style="display: block; position:relative;
+    width:60%; margin: 0 auto; opacity: 0.9; ">
+      <label for="examplenombre" style="text-align: center; color:aliceblue; ">Nombre</label>
+      <input type="text" class="form-control"  id="examplenombre"  placeholder="Ingresa tu nombre" required >
+    </div>
+
+    <div class="form-group" style="display: block; position:relative;
+    width:60%; margin: 0 auto; color:aliceblue; opacity: 0.9;">
+      <label for="exampledireccion">Direccion</label>
+      <input type="text" class="form-control" id="exampledireccion" placeholder="Ingresa tu direccion" required >
+      </div>
+      
+      <div class="form-group col-md-4" style="display: block; position:relative;
+      width:25%; margin: 0 auto; color:aliceblue; opacity: 0.9;">
+        <label for="inputState">Departamento</label>
+        <select id="inputState" class="form-control" required>
+          <option selected>Elije...</option>
+          <option>Guaymallen</option>
+          <option>Ciudad</option>
+          <option>GodoyCruz</option>
+          <option>Maipu</option>
+        </select>
+      </div>
+
+   
+    <div class="form-group" style="display: block; position:relative;
+    width:60%; margin: 0 auto; color:aliceblue; opacity: 0.9;" >
+        <label for="exampletelefono">Telefono</label>
+        <input type="text" class="form-control" id="exampletelefono"  placeholder="Ingresa tu telefono" required>
+      </div>
+  
+  
+    <button type="submit" class="btn btn-outline-success" [routerLink]="['/enviado']" style="display: block; position:relative;
+    width: 40%; margin: 0 auto; margin-top: 30px;">Confirmar</button>
+    
+    </div>
+  </div>
+  </form>
