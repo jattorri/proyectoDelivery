@@ -1,4 +1,12 @@
-# Sitioangular
+
+
+# Pedidito Descripcion Tecnica
+
+Pedidito es una aplicación web para gestionar el sistema de delivery de cualquier restaurant.
+Desarrollada en Angular + Typescript + Bootstrap desplegada en heroku para que pueda verse desde cualquier computadora o celular
+Es una app dinámica es decir todo su diseño se adapta a una lista de plato que el dueño del restaurant puede cargar, la aplicación adaptara todo su diseño automáticamente a la lista de platos que se le asigne
+Es una aplicacion de codigo optimizado, intuitiva y facil de usar
+Posee una pestaña donde el cliente puede ver los platos, obserevar sus detalles y realizar un pedido que se completa automaticamente segun los platos que vaya agregando el cliente...
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.2.
 
